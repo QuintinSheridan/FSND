@@ -42,3 +42,155 @@ The `./frontend` directory contains a complete React frontend to consume the dat
 Pay special attention to what data the frontend is expecting from each API response to help guide how you format your API. 
 
 [View the README.md within ./frontend for more details.](./frontend/README.md)
+
+
+# Expected API Behavior
+GET categories
+{{host}}/categories
+returns: '{
+  "categories": {
+    "1": "Science",
+    "2": "Art",
+    "3": "Geography",
+    "4": "History",
+    "5": "Entertainment",
+    "6": "Sports"
+  },
+  "success": true
+}`
+
+GET questions
+{host}/questions
+returns: `{
+  "categories": {
+    "1": "Science",
+    "2": "Art",
+    "3": "Geography",
+    "4": "History",
+    "5": "Entertainment",
+    "6": "Sports"
+  },
+  "current_category": null,
+  "questions": [
+    {
+      "answer": "Blood",
+      "category": 1,
+      "difficulty": 4,
+      "id": 22,
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    },
+    {
+      "answer": "Scarab",
+      "category": 4,
+      "difficulty": 4,
+      "id": 23,
+      "question": "Which dung beetle was worshipped by the ancient Egyptians?"
+    },
+    {
+      "answer": "yes",
+      "category": 1,
+      "difficulty": 1,
+      "id": 35,
+      "question": "does a quintin shit in the woods"
+    },
+    {
+      "answer": "yeah poop",
+      "category": 1,
+      "difficulty": 1,
+      "id": 36,
+      "question": "Are you gonna poop again"
+    }
+  ],
+  "success": true,
+  "total_questions": 4
+}`
+
+
+DELETE Question
+{host}//questions/23
+returns: `{
+  "categories": [
+    {
+      "id": 1,
+      "type": "Science"
+    },
+    {
+      "id": 2,
+      "type": "Art"
+    },
+    {
+      "id": 3,
+      "type": "Geography"
+    },
+    {
+      "id": 4,
+      "type": "History"
+    },
+    {
+      "id": 5,
+      "type": "Entertainment"
+    },
+    {
+      "id": 6,
+      "type": "Sports"
+    }
+  ],
+  "current_category": null,
+  "deleted": 23,
+  "questions": [
+    {
+      "answer": "Blood",
+      "category": 1,
+      "difficulty": 4,
+      "id": 22,
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    }
+  ],
+  "success": true,
+  "total_questions": 1
+}`
+
+POST Question
+{host}/
+returns: `{
+      'question': What is the best Movie?,
+      'answer': Jurassic Park,
+      'difficulty': 2,
+      'category': 3,
+      'success':  True,
+      'created': 34
+      }`
+
+POST questions/search
+{host}/questions/search?searchTerm=is
+returns: `{
+  "current_category": null,
+  "questions": [
+    {
+      "answer": "Blood",
+      "category": 1,
+      "difficulty": 4,
+      "id": 22,
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    }
+  ],
+  "success": true,
+  "total_questions": 1
+}`
+
+
+{host}/
+returns: ``
+
+{host}/
+returns: ``
+
+{host}/
+returns: ``
+
+{host}/
+returns: ``
+
+{host}/
+returns: ``
+
