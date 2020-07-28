@@ -66,7 +66,7 @@ class TriviaTestCase(unittest.TestCase):
 
     def test_create_question(self):
         # success
-        response = self.client().post('/questions/add', json = self.new_question)
+        response = self.client().post('/questions', json = self.new_question)
         data = json.loads(response.data)
 
         self.assertEqual(response.status_code, 200)
