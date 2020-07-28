@@ -178,12 +178,35 @@ returns: `{
   "total_questions": 1
 }`
 
+GET Category questions
+{host}/categories/1/questions'
+returns: `{
+  "current_category": 1,
+  "questions": [
+    {
+      "answer": "Blood",
+      "category": 1,
+      "difficulty": 4,
+      "id": 22,
+      "question": "Hematology is a branch of medicine involving the study of what?"
+    }
+  ],
+  "success": true,
+  "total_questions": 1
+}`
 
-{host}/
-returns: ``
-
-{host}/
-returns: ``
+POST Quizz
+{host}/quizzes
+returns: `{
+  "question": {
+    "answer": "Blood",
+    "category": 1,
+    "difficulty": 4,
+    "id": 22,
+    "question": "Hematology is a branch of medicine involving the study of what?"
+  },
+  "success": true
+}`
 
 {host}/
 returns: ``
