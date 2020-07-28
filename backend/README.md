@@ -196,7 +196,7 @@ returns: `{
 }`
 
 POST Question
-{host}/
+{host}/question
 returns: `{
       'question': What is the best Movie?,
       'answer': Jurassic Park,
